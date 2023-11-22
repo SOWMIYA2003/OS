@@ -397,4 +397,59 @@ int main() {
 # -------------------------------------------------------------------------
 ![image](https://github.com/SOWMIYA2003/OS/assets/93427443/57222481-bcfa-4bac-9499-b8b68e410bc2)
 # -----------------------------------------------------------------------------------
+![image](https://github.com/SOWMIYA2003/OS/assets/93427443/133e0048-743b-4e6f-a617-9423093688b4)
+
+```
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
+#include <sys/wait.h>
+int main() {
+    int p[2], pid, pid1;
+    char msg[25], msg1[25];
+    pipe(p);
+    pid = fork();
+    if (pid != 0) {
+        sleep(2);
+        read(p[0], msg1, 21);
+        printf("%s\n", msg1);
+    } else {
+        pid1 = fork();
+        if (pid1 != 0) {
+            sleep(1);
+            char message[] = "Grand child says hello";
+            write(p[1], message, strlen(message) + 1); 
+        } else {
+            char message[] = "Says hello to grandpa";
+            write(p[1], message, strlen(message) + 1); 
+    }
+    return 0;
+}
+
+```
+![image](https://github.com/SOWMIYA2003/OS/assets/93427443/60b0c548-c76b-45d5-9a4f-c16899daf682)
+# ---------------------------------------------------------
+![image](https://github.com/SOWMIYA2003/OS/assets/93427443/bc0b9a18-e5cb-480b-8782-0e1c3e283814)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
