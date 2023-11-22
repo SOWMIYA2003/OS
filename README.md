@@ -265,4 +265,136 @@ int main() {
 
 ```
 ![image](https://github.com/SOWMIYA2003/OS/assets/93427443/e362853f-0cc1-4ee1-a722-423c5d57531e)
+# -------------------------------------------------------------------
+![image](https://github.com/SOWMIYA2003/OS/assets/93427443/aa7c0b33-12d6-4cfb-b2be-1082258533c8)
+```
+#include <stdio.h>
+
+int main() {
+  int process[3], burstTime[3], waitingTime[3], turnaroundTime[3];
+  int totalWaitingTime = 0, totalTurnaroundTime = 0;
+  int avgWaitingTime, avgTurnaroundTime;
+
+  // Process ID
+  process[0] = 0;
+  process[1] = 1;
+  process[2] = 2;
+
+  // Burst time
+  burstTime[0] = 9;
+  burstTime[1] = 4;
+  burstTime[2] = 9;
+
+  // Waiting time calculation
+  for (int i = 0; i < 3; i++) {
+    if (i == 0) {
+      waitingTime[i] = 0;
+    } else {
+      waitingTime[i] = waitingTime[i - 1] + burstTime[i - 1];
+    }
+  }
+
+  // Turnaround time calculation
+  for (int i = 0; i < 3; i++) {
+    turnaroundTime[i] = burstTime[i] + waitingTime[i];
+  }
+
+  // Calculate total waiting time
+  for (int i = 0; i < 3; i++) {
+    totalWaitingTime += waitingTime[i];
+  }
+
+  // Calculate total turnaround time
+  for (int i = 0; i < 3; i++) {
+    totalTurnaroundTime += turnaroundTime[i];
+  }
+
+  // Calculate average waiting time
+  avgWaitingTime = totalWaitingTime / 3;
+
+  // Calculate average turnaround time
+  avgTurnaroundTime = totalTurnaroundTime / 3;
+
+  printf("Process\tBurst Time\tWaiting Time\tTurnaround Time\n");
+  for (int i = 0; i < 3; i++) {
+    printf("%d\t\t%d\t\t%d\t\t%d\n", process[i], burstTime[i], waitingTime[i], turnaroundTime[i]);
+  }
+
+  printf("\nAverage waiting time: %d ms\n", avgWaitingTime);
+  printf("Average turnaround time: %d ms\n", avgTurnaroundTime);
+
+  return 0;
+}
+
+```
+![image](https://github.com/SOWMIYA2003/OS/assets/93427443/2727d841-e5a4-4f34-ba81-92819a519a9b)
+# ------------------------------------------------------------------------------------
+![image](https://github.com/SOWMIYA2003/OS/assets/93427443/2ae436e1-4e11-4617-afa7-35b325488fd4)
+```
+#include <stdio.h>
+
+int main() {
+  int process[3], burstTime[3], waitingTime[3], turnaroundTime[3];
+  int totalWaitingTime = 0, totalTurnaroundTime = 0;
+  int avgWaitingTime, avgTurnaroundTime;
+
+  // Process ID
+  process[0] = 0;
+  process[1] = 1;
+  process[2] = 2;
+
+  // Burst time
+  burstTime[0] = 9;
+  burstTime[1] = 4;
+  burstTime[2] = 9;
+
+  // Waiting time calculation
+  for (int i = 0; i < 3; i++) {
+    if (i == 0) {
+      waitingTime[i] = 0;
+    }
+    else {
+      waitingTime[i] = waitingTime[i - 1] + burstTime[i - 1];
+    }
+  }
+
+  // Turnaround time calculation
+  for (int i = 0; i < 3; i++) {
+    turnaroundTime[i] = burstTime[i] + waitingTime[i];
+  }
+
+  // Calculate total waiting time
+  for (int i = 0; i < 3; i++) {
+    totalWaitingTime += waitingTime[i];
+  }
+
+  // Calculate total turnaround time
+  for (int i = 0; i < 3; i++) {
+    totalTurnaroundTime += turnaroundTime[i];
+  }
+
+  // Calculate average waiting time
+  avgWaitingTime = totalWaitingTime / 3;
+
+  // Calculate average turnaround time
+  avgTurnaroundTime = totalTurnaroundTime / 3;
+
+  printf("Process\tBurst Time\tWaiting Time\tTurnaround Time\n");
+  for (int i = 0; i < 3; i++) {
+    printf("%d\t\t%d\t\t%d\t\t%d\n", process[i], burstTime[i], waitingTime[i], turnaroundTime[i]);
+  }
+
+  printf("\nAverage waiting time: %d ms\n", avgWaitingTime);
+  printf("Average turnaround time: %d ms\n", avgTurnaroundTime);
+
+  return 0;
+}
+
+```
+![image](https://github.com/SOWMIYA2003/OS/assets/93427443/9574e002-3f53-4376-8ff6-012ef7753f4b)
+# -----------------------------------------------------
+![image](https://github.com/SOWMIYA2003/OS/assets/93427443/f92c0540-6a0a-4958-a245-0fa1c7f3ade1)
+# -------------------------------------------------------------------------
+![image](https://github.com/SOWMIYA2003/OS/assets/93427443/57222481-bcfa-4bac-9499-b8b68e410bc2)
+# -----------------------------------------------------------------------------------
 
